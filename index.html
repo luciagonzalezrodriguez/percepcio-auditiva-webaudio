@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ca">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicis de Percepció Auditiva</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zalando+Sans+SemiExpanded:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+
+        body {
+            font-family: 'Rubik', sans-serif;
+            margin: 0;
+            padding: 0 40px 40px 40px;
+            background: #82b5fc; /* top color */
+            color: #000;
+            position: relative;
+        }
+
+        /* Fons de dos colors */
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 65%;
+            background: #f9f5e1; /* bottom color */
+            z-index: -1;
+        }
+
+        /* --- Header --- */
+        header {
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            background: #3c2c22; 
+            padding: 5px 0;  
+            margin-bottom: 40px;
+        }
+
+        .header-banner {
+            text-align: center; 
+            color: #f9f5e1; 
+        }
+
+
+        header p {
+            font-size: 0.75rem;
+            font-family: 'Space Mono';
+            margin: 0 0 10px 10;
+            font-weight: 400;
+            text-transform: lowercase;
+        }
+
+        /* Títol */
+        h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin: 0 0 40px 0;
+            font-family: 'Zalando Sans SemiExpanded';
+            
+        }
+
+        /* marquee escull un exercici...*/
+        .marquee {
+        margin-top: -20px;
+        --gap: 0rem;
+        position: relative;
+        display: flex;
+        overflow: hidden;
+        gap: var(--gap);
+        max-width: fit-content;
+        }
+        #marquee:hover .marquee_content, :hover .marquee_content::after, :hover .marquee_content::before{
+            animation-play-state: paused;
+        }
+
+        .marquee_content {
+        flex-shrink: 0;
+        display: flex;
+        justify-content: space-around;
+        gap: var(--gap);
+        min-width: 100%;
+        animation: scroll 30s linear infinite;
+        font-family: 'Rubik Mono One';
+        }
+        .marquee_content::after,
+        .marquee_content::before {
+            content:"\00a0\00a0\00a0""escull un exercici per a practicar""\00a0\00a0\00a0""escull un exercici per a practicar""\00a0\00a0\00a0""escull un exercici per a practicar""\00a0\00a0\00a0""escull un exercici per a practicar""\00a0\00a0\00a0";
+            font-family: 'Rubik Mono One';
+            display: flex;
+
+        }
+
+        @keyframes scroll {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(calc(-100% - var(--gap)));
+        }
+        }
+
+        /* Format de cartes pels exercicis */
+        .container {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-auto-rows: 140px;
+            gap: 20px;
+            max-width: 900px;
+        }
+
+
+        a {
+            text-decoration: none;
+            color: black;
+            background: white;
+            border: 3px solid #3c2c22;
+            padding: 20px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            transition: transform 0.1s ease;
+            position: relative;
+        }
+
+        a h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 700;
+            font-family: 'Barlow';
+            text-transform: uppercase;
+        }
+
+
+        a:hover {
+            transform: translate(-6px, -6px);
+            box-shadow: 6px 6px 0 #3c2c22;
+        }
+
+        a::after {
+            content: '→';
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            font-weight: bold;
+            opacity: 0.3;
+            font-size: 1.5rem;
+        }
+
+        a:hover::after {
+            opacity: 1;
+        }
+
+
+        .big { grid-column: span 2; }
+        .tall { grid-row: span 2; }
+
+        /* Colors dels exercicis*/
+        a:nth-child(1){ background:#eabae2; }
+        a:nth-child(2){ background:#d7adf1; }
+        a:nth-child(3){ background:#E6E6FA; }
+        a:nth-child(4){ background: #f0b279; }
+
+
+        @media(max-width: 600px) {
+            header h1 { font-size: 2.8rem; }
+            h2 { font-size: 1rem; margin-bottom: 30px; }
+            .container { grid-auto-rows: 120px; }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-banner">
+            <p>© Lucía González 2026</p>
+        </div>
+    </header>
+    <h1>Exercicis de Percepció Auditiva</h1>
+    <div id="marquee" class="marquee">
+        <p class= "marquee_content">escull un exercici per a practicar </p>
+        <p aria-hidden="true" class= "marquee_content">escull un exercici per a practicar </p>
+    </div>
+    </div>
+
+    <div class="container">
+        <a href="ex1.html" class="tall">
+            <h3>Afina la freqüència</h3>
+        </a>
+
+        <a href="ex2.html" class="big">
+            <h3>Canta l'interval</h3>
+        </a>
+
+        <a href="ex3.html">
+            <h3>Canta l'acord atonal</h3>
+        </a>
+
+        <a href="ex4.html" >
+            <h3>Canta la seqüència atonal</h3>
+        </a>
+    </div>
+
+</body>
+</html>
